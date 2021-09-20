@@ -1,0 +1,48 @@
+
+
+--------------------------------------------------Restore SQL database--------------------------------------------------------------------------
+
+
+
+1.  ERROR at line 113: Failed to open file 'load_departments.dump', error: 2
+==>
+
+Tried "sudo mysqldump -u root  employees > /home/desktop/database/employees_dump.sql;" instead of " mysqldump -u root  employees > /home/desktop/database/employees_dump.sql".
+
+2. For syntax errors
+==
+	follwed "https://dev.mysql.com/doc/refman/8.0/en/" this manual for reference.
+	
+
+
+
+
+------------------------------------------------Restore postgres database------------------------------------------------------------------------
+
+
+
+1. ERROR: Failed to open file 'load_employees.dump', error: 2
+==>   
+
+   Tried "sudo source /home/webonise/Desktop/Assignments/Devops/test_db/employees.sql;" this command instead of "source /home/webonise/Desktop/Assignments/Devops/test_db/employees.sql;"
+   
+   
+2. ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysqldump -u root employees > employees_dump.sql' at line 1
+==> 
+    
+    followed "https://www.postgresql.org/docs/" site for all syntax errors.
+    
+3. FATAL:  password authentication failed for user "postgres"
+==>
+
+	set new password by ussing command "alter user postgres with password 'abc12345';"
+	
+4. ERROR:  syntax error at or near "pg_dump" LINE 1: pg_dump dvdentral > /home/webonise/Desktop/Assignments/Devop...
+==>  
+
+    used "sudo pg_dump -U postgres -W -F t dvdrental > /home/webonise/Desktop/Assignments/Devops/dvdrental_backup.tar" instead of "pg_dump -U postgres -W -F t dvdrental > /home/webonise/Desktop/Assignments/Devops/dvdrental_backup.tar"
+    
+    
+
+
+
